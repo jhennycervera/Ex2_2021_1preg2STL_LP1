@@ -76,3 +76,8 @@ void Falta::leer(ifstream& arch) {
     multa= rmulta;
     SetPlaca(rplaca);
 }
+
+//void Falta::imprime(ofstream& arch) {
+//    
+//    arch<<setw(10)<<placa<<setw(10)<<fecha<<multa<<endl;
+//}

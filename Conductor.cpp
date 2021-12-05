@@ -65,13 +65,11 @@ void Conductor :: operator =(const Conductor& c){
     SetNombre(rnombre);
     
    //copia el arreglo de faltas de c a su arreglo de faltas
-    //PREGUNTAR , hay algun metodo que copia arreglo a arreglo?
    
-    vector<Falta>::const_iterator itc;
-    //PREGUNTAR error de const_iterator
-    for( vector<Falta>::iterator it= falta.begin(),
-         itc = c.falta.begin(); itc!= c.falta.end() ; it++, itc++){
-        *it= *itc; //se sobrecarga el operador falta
+    vector<Falta>::const_iterator itc; //tiene que ser const por const Conductor &c en el parametro
+    
+    for( itc = c.falta.begin(); itc!= c.falta.end() ; itc++){
+        falta.push_back(*itc); 
     }
 }
 
@@ -96,6 +94,11 @@ void Conductor::imprime(ofstream& arch) {
     arch<<left<<setw(10)<<licencia<<nombre<<endl;
     
     //imprimir las faltas
+//    for(vector<Falta>::iterator it= falta.begin(); it!= falta.end();
+//                                    it++){
+//        it->imprime(arch);
+//    }
+    arch<<endl;
 }
 
 void operator << (ofstream &arch,  const Conductor & c){

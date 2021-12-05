@@ -36,11 +36,12 @@ public:
     void SetLicencia(int licencia);
     int GetLicencia() const;
     
+    void imprime(ofstream &arch); 
     void operator = (const Conductor &);
     void operator = (const Falta &);
     
     void lee(ifstream &arch);
-    void imprime(ofstream &arch); //falla
+   
 };
 
 

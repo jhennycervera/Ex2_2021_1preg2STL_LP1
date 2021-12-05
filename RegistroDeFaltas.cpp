@@ -46,7 +46,7 @@ void RegistroDeFaltas::leerConductores() {
 
 void RegistroDeFaltas::imprimir() {
     
-    ofstream arch("Reporte.txt", ios:: out);
+    ofstream arch("Reporte1.txt", ios:: out);
     if(!arch){
          cout<<"No se puede abrir el archivo Reporte.txt"<<endl;
         exit(1);
@@ -54,7 +54,8 @@ void RegistroDeFaltas::imprimir() {
     
     for(  vector<Conductor>::iterator it= conductores.begin() ; it!= conductores.end();
                                                                 it++){
-        arch<<*it; //PREGUNTAR porq no funciona con el metodo imprime, no lo reconoce
+        it->imprime(arch) ;
+        //arch<<*it; //tmb se puede asi
     }
 }
 
@@ -84,5 +85,4 @@ void RegistroDeFaltas::leerFaltas() {
         }
         
     }
-    
 }

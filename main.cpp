@@ -16,6 +16,7 @@
 #include <iomanip>        
 #include <vector>
 #include <iterator>
+#include <algorithm>
 using namespace std;
 #include "RegistroDeFaltas.h"
 
@@ -27,12 +28,23 @@ int main(int argc, char** argv) {
    
     RegistroDeFaltas reg;
     
-    reg.leerConductores();
-
     
-    //PREGUNTAR si hay un metodo para ordenar descendente a parte de pasar 
-    //greater<Nodo>()
-
+    reg.leerConductores();
+    //reg.imprimir();
+    //reg.leerFaltas();
+    //reg.imprimir();
+    
+    
     return 0;
 }
 
+
+
+//bool compareInterval(Conductor i1, Conductor i2)
+//{
+//    return (i1.GetLicencia() < i2.GetLicencia());
+//}
+//
+////
+//sort(conductores.begin(), conductores.end(), compareInterval);
+//sort(conductores.begin(), conductores.end(), greater<Nodo>());

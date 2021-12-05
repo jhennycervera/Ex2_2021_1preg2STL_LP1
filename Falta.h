@@ -35,6 +35,7 @@ public:
     void operator = (const Falta & f); 
     
     void leer(ifstream &arch);
+   // void imprime(ofstream & arch);
 
 };
 
